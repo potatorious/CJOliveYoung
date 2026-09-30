@@ -19,7 +19,15 @@
     }
     *{box-sizing:border-box}
     html{background:var(--bg); color:var(--ink); font-family:Arial,"Noto Sans KR","Apple SD Gothic Neo",sans-serif}
-    body{margin:0}
+    body{
+      margin:0;
+      word-break:keep-all;
+      line-break:strict;
+      text-wrap:pretty;
+      hyphens:none;
+    }
+    h1,h2,h3,.quote,.route-node,.channel .name{ text-wrap:balance; }
+    p,li,.small,.metric-label,.step{ text-wrap:pretty; }
     a{color:inherit}
     .toolbar{
       position:sticky; top:0; z-index:20; display:flex; justify-content:space-between; align-items:center;
@@ -109,12 +117,12 @@
     }
     .big-callout strong{font-size:17px; line-height:1.22}
     .pill{background:#111;color:#fff;border-radius:999px;padding:5px 9px;font-size:9px;font-weight:800;white-space:nowrap}
-    .cover-grid{display:grid;grid-template-columns:1.65fr .85fr;gap:16px;align-items:start}
+    .cover-grid{display:grid;grid-template-columns:1.45fr .85fr;gap:16px;align-items:start}
     .cover-side{display:grid;gap:9px}
     .cover-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:13px}
     .cover-route{margin-top:14px}
-    .cover-thesis{margin-top:14px;display:grid;grid-template-columns:1.35fr .65fr;gap:10px}
-    .reason-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:12px;align-items:stretch}
+    .cover-thesis{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .reason-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
     .reason-left,.reason-right{display:grid;gap:9px}
     .reason-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
     .reason-cards{display:grid;grid-template-columns:1fr 1fr;gap:9px}
@@ -123,15 +131,18 @@
     .execution-page .channel-grid{align-items:start}
     .execution-page .channel{display:block}
     .execution-page .bullets{margin-top:4px}
-    .execution-bottom{display:grid;grid-template-columns:1.15fr .85fr;gap:10px;margin-top:10px}
+    .execution-bottom{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
     .roadmap-page{display:flex;flex-direction:column;justify-content:center}
     .roadmap-effects{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:9px}
     .roadmap-final{margin-top:9px}
+    .growth-loop-inner{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;align-items:center}
+    .growth-loop-chain{border-left:1px solid rgba(0,0,0,.25);padding-left:18px}
+    .thesis-copy{display:grid;grid-template-columns:.95fr 1.05fr;gap:16px;align-items:center}
     .fill-card{height:auto}
     @media(max-width:900px){
       .doc{padding:0}
       .page{width:100%; height:auto; min-height:100vh; margin:0; padding:28px 22px; box-shadow:none; display:block}
-      .grid2,.grid3,.hero-bottom,.timeline,.flow,.cover-grid,.cover-summary,.cover-thesis,.reason-grid,.reason-metrics,.reason-cards,.channel-grid,.execution-bottom,.roadmap-effects{grid-template-columns:1fr}
+      .grid2,.grid3,.hero-bottom,.timeline,.flow,.cover-grid,.cover-summary,.cover-thesis,.reason-grid,.reason-metrics,.reason-cards,.channel-grid,.execution-bottom,.roadmap-effects,.growth-loop-inner,.thesis-copy{grid-template-columns:1fr}
       .hero-route{grid-template-columns:1fr}.arrow{transform:rotate(90deg);text-align:center}
       .footer{position:static;margin-top:24px}
     }
@@ -213,8 +224,11 @@
         </div>
         <div class="card">
           <div class="kicker">GROWTH LOGIC</div>
-          <p class="lead"><b>Paid → Organic → Retention → Brand Halo → SEA</b></p>
-          <p class="small" style="margin-top:5px">첫 구매에서 끝나지 않고 다음 구매와 다음 채널까지 이어지도록 설계합니다.</p>
+          <div class="thesis-copy">
+            <p class="lead"><b>Paid → Organic → Retention</b></p>
+            <p class="lead"><b>Brand Halo → SEA</b></p>
+          </div>
+          <p class="small" style="margin-top:6px">첫 구매에서 끝나지 않고 다음 구매와 다음 채널까지 이어지도록 설계합니다.</p>
         </div>
       </div>
 
@@ -331,7 +345,7 @@
       <div class="channel-grid">
         <div class="channel fill-card">
           <div class="name">Shopee</div>
-          <h3>내부광고를 Organic Rank를 만드는 학습 엔진으로 활용합니다</h3>
+          <h3>내부광고를 Organic Rank 성장 엔진으로 활용합니다</h3>
           <ul class="bullets">
             <li>Hero SKU와 구매 키워드를 검색·상품 광고에서 빠르게 발굴합니다.</li>
             <li>성과 키워드는 수동 캠페인으로 분리해 판매량·리뷰·전환 신호를 집중시킵니다.</li>
@@ -342,7 +356,7 @@
 
         <div class="channel fill-card">
           <div class="name">Lazada</div>
-          <h3>동일 원리로 검증하되 플랫폼별 Organic 구조를 별도로 학습합니다</h3>
+          <h3>플랫폼별 Organic 구조를 별도로 학습합니다</h3>
           <ul class="bullets">
             <li>Hero SKU의 상품정보·검색 키워드를 정비하고 Sponsored Solutions로 구매 의도 높은 트래픽을 확보합니다.</li>
             <li>광고 전후의 자연검색·자연매출 변화를 추적해 Lazada만의 성장 공식을 축적합니다.</li>
@@ -353,7 +367,7 @@
 
         <div class="channel fill-card">
           <div class="name">SNS / External</div>
-          <h3>외부유입은 내부광고를 대체하지 않고 검색과 재구매를 증폭합니다</h3>
+          <h3>외부유입으로 검색과 재구매를 증폭합니다</h3>
           <ul class="bullets">
             <li>Meta 협력광고와 Micro Creator 사용기를 Hero SKU의 검색 수요와 상세페이지 유입에 연결합니다.</li>
             <li>GRWM·지속력·색조합처럼 구매 전 궁금한 장면을 만들고 전환을 측정합니다.</li>
@@ -365,8 +379,16 @@
 
       <div class="card accent" style="margin-top:10px">
         <div class="kicker">GROWTH LOOP</div>
-        <h3>핵심은 내부광고가 중심이며, SNS와 외부유입은 가속장치라는 점입니다.</h3>
-        <p class="lead">Platform Ads → Conversion Signal → Organic Visibility → Repeat Purchase → Channel Expansion</p>
+        <div class="growth-loop-inner">
+          <div>
+            <h3>핵심은 내부광고가 중심이며, SNS와 외부유입은 가속장치라는 점입니다.</h3>
+            <p class="small">Paid 성과가 플랫폼 안에서 끝나지 않고 자연노출과 재구매로 남도록 설계합니다.</p>
+          </div>
+          <div class="growth-loop-chain">
+            <p class="lead"><b>Platform Ads → Conversion Signal → Organic Visibility</b></p>
+            <p class="lead" style="margin-top:3px"><b>→ Repeat Purchase → Channel Expansion</b></p>
+          </div>
+        </div>
       </div>
 
       <div class="execution-bottom">
