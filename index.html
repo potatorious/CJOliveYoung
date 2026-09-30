@@ -32,6 +32,9 @@
       width:297mm; height:210mm; margin:0 auto 24px; padding:12mm 14mm 11mm;
       background:var(--paper); position:relative; overflow:hidden; box-shadow:0 12px 40px rgba(0,0,0,.12);
       page-break-after:always;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
     }
     .page:last-child{page-break-after:auto}
     .kicker{font-size:9.5px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; margin-bottom:6px}
@@ -86,7 +89,7 @@
     .flow .step{border:1px solid var(--line); border-radius:10px; padding:7px; font-size:8.5px; line-height:1.38}
     .flow .step strong{display:block; font-size:11px; margin-bottom:4px}
     .channel-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
-    .channel{display:block; padding:10px; border:1px solid var(--line); border-radius:12px}
+    .channel{display:block; padding:11px; border:1px solid var(--line); border-radius:12px; min-height:0}
     .channel .name{font-size:15px; font-weight:900; letter-spacing:-.03em; margin-bottom:7px}
     .bullets{margin:0; padding-left:15px}
     .bullets li{font-size:9px; line-height:1.42; margin-bottom:4px}
@@ -116,18 +119,18 @@
     .reason-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
     .reason-cards{display:grid;grid-template-columns:1fr 1fr;gap:9px}
     .reason-flow{margin-top:10px}
-    .execution-page{display:flex;flex-direction:column}
-    .execution-page .channel-grid{flex:1;align-items:stretch}
-    .execution-page .channel{display:flex;flex-direction:column}
+    .execution-page{display:flex;flex-direction:column;justify-content:center}
+    .execution-page .channel-grid{align-items:start}
+    .execution-page .channel{display:block}
     .execution-page .bullets{margin-top:4px}
     .execution-bottom{display:grid;grid-template-columns:1.15fr .85fr;gap:10px;margin-top:10px}
-    .roadmap-page{display:flex;flex-direction:column}
+    .roadmap-page{display:flex;flex-direction:column;justify-content:center}
     .roadmap-effects{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:9px}
     .roadmap-final{margin-top:9px}
-    .fill-card{height:100%}
+    .fill-card{height:auto}
     @media(max-width:900px){
       .doc{padding:0}
-      .page{width:100%; height:auto; min-height:100vh; margin:0; padding:28px 22px; box-shadow:none}
+      .page{width:100%; height:auto; min-height:100vh; margin:0; padding:28px 22px; box-shadow:none; display:block}
       .grid2,.grid3,.hero-bottom,.timeline,.flow,.cover-grid,.cover-summary,.cover-thesis,.reason-grid,.reason-metrics,.reason-cards,.channel-grid,.execution-bottom,.roadmap-effects{grid-template-columns:1fr}
       .hero-route{grid-template-columns:1fr}.arrow{transform:rotate(90deg);text-align:center}
       .footer{position:static;margin-top:24px}
