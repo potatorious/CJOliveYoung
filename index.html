@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WAKEMAKE Singapore Growth Strategy</title>
+  <meta name="description" content="CJ Olive Young Global Insight assignment — WAKEMAKE Singapore growth strategy across Shopee, Lazada and social content." />
+  <style>
+    :root{
+      --ink:#161616;
+      --muted:#666;
+      --line:#dedede;
+      --paper:#fff;
+      --bg:#ececec;
+      --lime:#dfff4f;
+      --pink:#ffd6e8;
+      --blue:#d9e7ff;
+      --violet:#ddd6ff;
+    }
+    *{box-sizing:border-box}
+    html{background:var(--bg); color:var(--ink); font-family:Arial,"Noto Sans KR","Apple SD Gothic Neo",sans-serif}
+    body{margin:0}
+    a{color:inherit}
+    .toolbar{
+      position:sticky; top:0; z-index:20; display:flex; justify-content:space-between; align-items:center;
+      padding:12px 20px; background:rgba(20,20,20,.94); color:#fff; backdrop-filter:blur(8px)
+    }
+    .toolbar strong{font-size:13px; letter-spacing:.04em}
+    .toolbar button{border:0; border-radius:999px; padding:9px 15px; font-weight:800; cursor:pointer}
+    .doc{padding:26px 0 60px}
+    .page{
+      width:210mm; height:297mm; margin:0 auto 24px; padding:16mm 16mm 14mm;
+      background:var(--paper); position:relative; overflow:hidden; box-shadow:0 12px 40px rgba(0,0,0,.12);
+      page-break-after:always;
+    }
+    .page:last-child{page-break-after:auto}
+    .kicker{font-size:11px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; margin-bottom:9px}
+    h1{font-size:32px; line-height:1.08; letter-spacing:-.045em; margin:0}
+    h2{font-size:25px; line-height:1.14; letter-spacing:-.04em; margin:0 0 10px}
+    h3{font-size:15px; line-height:1.3; margin:0 0 6px}
+    p{font-size:12px; line-height:1.7; margin:0}
+    .lead{font-size:16px; line-height:1.55; letter-spacing:-.025em}
+    .small{font-size:9.5px; line-height:1.55; color:var(--muted)}
+    .tiny{font-size:8px; line-height:1.45; color:#777}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:9px}
+    .card{border:1px solid var(--line); border-radius:12px; padding:12px}
+    .soft{background:#fafafa}
+    .accent{background:var(--lime); border-color:transparent}
+    .pink{background:var(--pink); border-color:transparent}
+    .blue{background:var(--blue); border-color:transparent}
+    .violet{background:var(--violet); border-color:transparent}
+    .tag{display:inline-block; border:1px solid #222; border-radius:999px; padding:4px 8px; font-size:9px; font-weight:800; margin:0 4px 4px 0}
+    .metric{font-size:29px; font-weight:900; letter-spacing:-.05em}
+    .metric-label{font-size:9px; color:#555; margin-top:2px}
+    .rule{height:1px; background:var(--line); margin:12px 0}
+    .quote{font-size:22px; line-height:1.35; letter-spacing:-.045em; font-weight:900}
+    .hero{
+      height:100%; display:flex; flex-direction:column; justify-content:space-between;
+    }
+    .hero-title{max-width:150mm}
+    .hero-title .super{font-size:13px; font-weight:900; letter-spacing:.05em; margin-bottom:11px}
+    .hero-title h1{font-size:43px; max-width:165mm}
+    .hero-title h1 span{background:linear-gradient(transparent 62%, var(--lime) 62%)}
+    .hero-sub{margin-top:17px; max-width:145mm}
+    .hero-route{
+      display:grid; grid-template-columns:1fr auto 1fr auto 1fr; align-items:center; gap:8px; margin-top:18px
+    }
+    .route-node{border:1px solid #111; border-radius:12px; padding:12px; font-size:11px; font-weight:900}
+    .arrow{font-size:20px}
+    .hero-bottom{display:grid; grid-template-columns:1.15fr .85fr; gap:10px}
+    .section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:12px; margin-bottom:12px}
+    .section-head .num{font-size:44px; font-weight:900; color:#efefef; line-height:.8}
+    .bar{height:12px; border-radius:999px; background:#efefef; overflow:hidden; display:flex}
+    .bar span{display:block; height:100%}
+    .shopee{width:52%; background:#111}
+    .lazada{width:36%; background:#777}
+    .other{width:12%; background:#d7d7d7}
+    .legend{display:flex; gap:12px; margin-top:6px; font-size:9px}
+    .legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px}
+    .timeline{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:10px}
+    .phase{border-top:4px solid #111; padding-top:8px}
+    .phase b{font-size:16px}
+    .phase p{font-size:10px; margin-top:5px}
+    .flow{display:grid; grid-template-columns:repeat(5,1fr); gap:6px; align-items:stretch}
+    .flow .step{border:1px solid var(--line); border-radius:10px; padding:9px 8px; font-size:9.5px; line-height:1.45}
+    .flow .step strong{display:block; font-size:11px; margin-bottom:4px}
+    .channel{display:grid; grid-template-columns:88px 1fr; gap:11px; align-items:start; padding:11px 0; border-bottom:1px solid var(--line)}
+    .channel:last-child{border-bottom:0}
+    .channel .name{font-size:16px; font-weight:900; letter-spacing:-.03em}
+    .bullets{margin:0; padding-left:16px}
+    .bullets li{font-size:10.5px; line-height:1.55; margin-bottom:4px}
+    .kpi{display:grid; grid-template-columns:repeat(4,1fr); gap:7px}
+    .kpi div{border:1px solid var(--line); border-radius:10px; padding:9px}
+    .kpi b{font-size:15px; display:block; margin-bottom:3px}
+    .footer{
+      position:absolute; left:16mm; right:16mm; bottom:8mm; display:flex; justify-content:space-between; align-items:center;
+      font-size:8px; color:#888
+    }
+    .sources{font-size:8px; line-height:1.45; color:#666}
+    .sources ol{margin:5px 0 0; padding-left:16px}
+    .sources li{margin-bottom:3px}
+    .note{border-left:4px solid #111; padding:8px 10px; background:#fafafa}
+    .big-callout{
+      border:1px solid #111; border-radius:14px; padding:14px; display:flex; justify-content:space-between; gap:16px; align-items:flex-end
+    }
+    .big-callout strong{font-size:21px; line-height:1.25}
+    .pill{background:#111;color:#fff;border-radius:999px;padding:5px 9px;font-size:9px;font-weight:800;white-space:nowrap}
+    @media(max-width:900px){
+      .doc{padding:0}
+      .page{width:100%; height:auto; min-height:100vh; margin:0; padding:28px 22px; box-shadow:none}
+      .grid2,.grid3,.hero-bottom,.timeline,.flow{grid-template-columns:1fr}
+      .hero-route{grid-template-columns:1fr}.arrow{transform:rotate(90deg);text-align:center}
+      .footer{position:static;margin-top:24px}
+    }
+    @media print{
+      html,body{background:#fff}
+      .toolbar{display:none!important}
+      .doc{padding:0}
+      .page{margin:0; box-shadow:none; width:210mm; height:297mm}
+      @page{size:A4; margin:0}
+      a{text-decoration:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <strong>CJ OLIVE YOUNG · GLOBAL INSIGHT ASSIGNMENT</strong>
+    <button onclick="window.print()">PDF로 저장</button>
+  </div>
+
+  <main class="doc">
+    <section class="page">
+      <div class="hero">
+        <div>
+          <div class="kicker">WAKEMAKE × SINGAPORE</div>
+          <div class="hero-title">
+            <div class="super">SHOPEE + LAZADA GROWTH PLAYBOOK</div>
+            <h1>싱가포르를 <span>도착점이 아닌<br>동남아 성장의 다리</span>로</h1>
+            <p class="hero-sub lead">
+              판매처는 이미 있다. 다음 과제는 <b>검색되는 브랜드</b>, <b>보게 되는 브랜드</b>, 그리고
+              <b>구매로 이어지는 브랜드</b>를 하나의 구조로 연결하는 것.
+            </p>
+          </div>
+          <div class="hero-route">
+            <div class="route-node">MICRO CREATOR<br><span class="small">사용기 · 메이크업 룩</span></div>
+            <div class="arrow">→</div>
+            <div class="route-node">SOCIAL DISCOVERY<br><span class="small">Instagram · short-form</span></div>
+            <div class="arrow">→</div>
+            <div class="route-node">COMMERCE<br><span class="small">Shopee · Lazada</span></div>
+          </div>
+        </div>
+
+        <div class="hero-bottom">
+          <div class="card accent">
+            <div class="kicker">CORE THESIS</div>
+            <div class="quote">“SNS를 운영하는 것”보다<br>“소비자가 볼 이유를 만드는 것”이 먼저.</div>
+          </div>
+          <div class="card">
+            <div class="kicker">SELECTED</div>
+            <p><b>Brand</b> WAKEMAKE</p>
+            <p><b>Market</b> Singapore</p>
+            <p><b>Core channels</b> Shopee + Lazada</p>
+            <p><b>Demand layer</b> Micro creators + social</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer"><span>01 · EXECUTIVE SUMMARY</span><span>최동빈</span></div>
+    </section>
+
+    <section class="page">
+      <div class="section-head">
+        <div>
+          <div class="kicker">01 · WHY SINGAPORE</div>
+          <h2>작지만, 두 플랫폼을 동시에 검증하기 좋은 시장</h2>
+        </div>
+        <div class="num">01</div>
+      </div>
+
+      <div class="grid3">
+        <div class="card accent">
+          <div class="metric">US$5.9B</div>
+          <div class="metric-label">Singapore platform ecommerce GMV, 2025</div>
+        </div>
+        <div class="card">
+          <div class="metric">52%</div>
+          <div class="metric-label">Shopee share of Singapore platform GMV</div>
+        </div>
+        <div class="card">
+          <div class="metric">36%</div>
+          <div class="metric-label">Lazada share of Singapore platform GMV</div>
+        </div>
+      </div>
+
+      <div class="card soft" style="margin-top:10px">
+        <h3>Shopee + Lazada = 88%</h3>
+        <div class="bar"><span class="shopee"></span><span class="lazada"></span><span class="other"></span></div>
+        <div class="legend">
+          <span><i style="background:#111"></i>Shopee 52%</span>
+          <span><i style="background:#777"></i>Lazada 36%</span>
+          <span><i style="background:#d7d7d7"></i>Others 12%</span>
+        </div>
+        <p class="small" style="margin-top:8px">
+          2025년 싱가포르 플랫폼 이커머스 GMV 기준. 두 채널을 함께 운영하면 시장의 대부분을 하나의 테스트베드에서 관찰할 수 있다.
+        </p>
+      </div>
+
+      <div class="rule"></div>
+
+      <div class="grid2">
+        <div>
+          <h3>싱가포르의 역할: 매출 규모보다 ‘검증과 확장’</h3>
+          <p>
+            싱가포르를 동남아 최대 시장으로 보는 전략이 아니다. 영어 기반의 콘텐츠를 만들고,
+            Shopee와 Lazada 양쪽에서 상품·검색·광고·프로모션 반응을 비교한 뒤,
+            검증된 운영 원리를 말레이시아·필리핀·태국 등으로 <b>현지화해 전개하는 브리지 마켓</b>으로 본다.
+          </p>
+          <div class="note" style="margin-top:10px">
+            <b>원칙</b>
+            <p class="small">싱가포르에서 성공한 소재를 그대로 복사하지 않는다. “무엇이 반응했는지”를 데이터로 분리한 뒤 국가별 가격, 문화, 플랫폼 구조에 맞춰 재설계한다.</p>
+          </div>
+        </div>
+        <div class="card blue">
+          <div class="kicker">REGIONAL CONTEXT</div>
+          <p class="lead"><b>SEA 플랫폼 이커머스는 2025년 US$157.6B</b> 규모로 성장했고, Shopee·Lazada·TikTok Shop 3개 플랫폼이 98.8%를 차지했다.</p>
+          <p class="small" style="margin-top:8px">
+            동시에 content commerce가 플랫폼 GMV의 32%를 차지했다. 콘텐츠는 “브랜딩 보조수단”이 아니라 수요를 만드는 인프라가 됐다.
+          </p>
+        </div>
+      </div>
+
+      <div class="sources" style="margin-top:14px">
+        <b>Sources</b>
+        <ol>
+          <li>Momentum Works, <i>Ecommerce in Southeast Asia 2026</i> — 2025 Singapore GMV and platform shares.</li>
+          <li>Momentum Works — SEA platform GMV US$157.6B; top 3 platforms 98.8%; content commerce 32%.</li>
+        </ol>
+      </div>
+      <div class="footer"><span>02 · MARKET ROLE</span><span>Singapore as a bridge market</span></div>
+    </section>
+
+    <section class="page">
+      <div class="section-head">
+        <div>
+          <div class="kicker">02 · CURRENT GAP</div>
+          <h2>판매는 보이는데, 브랜드가 말하는 장면은 적다</h2>
+        </div>
+        <div class="num">02</div>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="kicker">COMMERCE PRESENCE</div>
+          <h3>Shopee: 공식명 검색 노출 + 제3자 판매 혼재</h3>
+          <p>
+            2026년 9월 Shopee Singapore 검색에서 <b>WAKEMAKE_SG</b>가 12개 상품으로 노출되며,
+            Soft Blurring Eye Palette·Any-Proof Eyeliner 등 핵심 색조 상품이 확인된다.
+            동시에 다수의 제3자 셀러도 검색 결과를 차지한다.
+          </p>
+        </div>
+        <div class="card">
+          <div class="kicker">LAZADA VISIBILITY</div>
+          <h3>Lazada: 상품 수요는 있으나 판매 주체가 분산</h3>
+          <p>
+            Lazada Singapore 검색에서도 WAKEMAKE 아이팔레트·파운데이션·브러시 등이 확인되지만,
+            Beauty Concept Store·Gmarket Korea 등 여러 판매자에 노출이 분산되어 있다.
+          </p>
+        </div>
+      </div>
+
+      <div class="big-callout" style="margin-top:11px">
+        <div>
+          <div class="kicker">OWNED SOCIAL OBSERVATION</div>
+          <strong>채널의 톤앤매너보다 먼저 볼 것:<br>“소비자가 이 계정을 왜 보나?”</strong>
+          <p class="small" style="margin-top:7px">
+            지원자 직접 확인 기준(2026-09-30), Singapore Instagram의 최신 가시 게시물이 2026년 7월에 머물러 있음.
+            이는 매출 부진의 증거가 아니라, 소비자 접점 재활성화 여지를 보여주는 운영 신호로 활용한다.
+          </p>
+        </div>
+        <span class="pill">OBSERVATION, NOT CAUSATION</span>
+      </div>
+
+      <div class="rule"></div>
+
+      <h3>문제 정의</h3>
+      <div class="flow" style="margin-top:7px">
+        <div class="step"><strong>01 노출</strong>마켓플레이스 검색에는 상품이 존재</div>
+        <div class="step"><strong>02 이해</strong>하지만 “왜 이 색인가”를 보여주는 맥락은 약함</div>
+        <div class="step"><strong>03 신뢰</strong>현지 사용 장면과 리뷰가 구매 판단을 보조해야 함</div>
+        <div class="step"><strong>04 전환</strong>Shopee·Lazada에서 가격·쿠폰·리뷰·광고로 구매</div>
+        <div class="step"><strong>05 확장</strong>싱가포르 학습을 SEA 국가별로 재설계</div>
+      </div>
+
+      <div class="card pink" style="margin-top:12px">
+        <div class="quote">“예쁜 피드”가 목표가 아니라<br>“보고 → 궁금해하고 → 검색하고 → 사는” 흐름이 목표.</div>
+      </div>
+
+      <div class="sources" style="margin-top:13px">
+        <b>Source notes</b>
+        <ol>
+          <li>Shopee Singapore, WAKEMAKE search result, crawled Sep 2026.</li>
+          <li>Lazada Singapore, WAKEMAKE search/listing pages, crawled Sep 2026.</li>
+          <li>Instagram recency is an applicant observation and should be rechecked immediately before submission.</li>
+        </ol>
+      </div>
+      <div class="footer"><span>03 · CURRENT STATE</span><span>Commerce exists · content loop is the opportunity</span></div>
+    </section>
+
+    <section class="page">
+      <div class="section-head">
+        <div>
+          <div class="kicker">03 · GROWTH SYSTEM</div>
+          <h2>두 개의 전환 채널 + 하나의 수요 생성 레이어</h2>
+        </div>
+        <div class="num">03</div>
+      </div>
+
+      <div class="channel">
+        <div class="name">Shopee</div>
+        <div>
+          <h3>검색·광고·Mega Day를 묶어 Hero SKU에 학습 집중</h3>
+          <ul class="bullets">
+            <li>Soft Blurring Eye Palette 등 대표 SKU를 우선 선정하고, 자동/확장형 광고로 반응 키워드·상품 타깃을 탐색</li>
+            <li>전환이 확인된 키워드와 상품 타깃은 수동 캠페인으로 분리해 입찰과 예산을 집중</li>
+            <li>9.9·10.10·11.11·12.12에는 바우처·번들·광고를 한 번에 설계해 판매량과 리뷰를 축적</li>
+            <li>성과 판단은 ROAS만이 아니라 검색 노출, 자연매출, 리뷰 증가, 반복 구매 신호까지 함께 확인</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="channel">
+        <div class="name">Lazada</div>
+        <div>
+          <h3>분산된 검색 노출을 ‘브랜드가 통제하는 구매 경험’으로 회수</h3>
+          <ul class="bullets">
+            <li>핵심 SKU의 제목·카테고리·이미지·옵션·프로모션 메시지를 표준화해 브랜드 검색 품질을 정비</li>
+            <li>Sponsored Solutions와 행사 구좌를 Hero SKU 중심으로 운영하고 Shopee와 동일 KPI 구조로 비교</li>
+            <li>CEM/CRM 접점에서는 신제품 알림보다 “색상 선택 이유·메이크업 조합·행사 혜택”을 함께 전달</li>
+            <li>플랫폼별 고객 반응 차이를 기록해, 한 채널의 성공 공식을 다른 채널에 그대로 복제하지 않음</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="channel">
+        <div class="name">Content</div>
+        <div>
+          <h3>대형 인플루언서 한 번보다, 소규모 사용 장면을 계속</h3>
+          <ul class="bullets">
+            <li>Micro creator 중심으로 GRWM, 팔레트 1개로 3 looks, 직장/데이트/주말 메이크업 등 반복 가능한 포맷 제작</li>
+            <li>싱가포르의 기후·라이프스타일을 반영한 착색, 지속력, 색조합 콘텐츠로 “구매 전에 보고 싶은 장면”을 확보</li>
+            <li>콘텐츠마다 Shopee/Lazada 딥링크·쿠폰 또는 어필리에이트 코드를 붙여 조회가 아닌 구매 기여를 측정</li>
+            <li>브랜드 SNS는 동일 톤앤매너를 유지하되, 소비자가 볼 이유가 없는 게시물은 만들지 않음</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card accent" style="margin-top:12px">
+        <h3>핵심: 콘텐츠를 별도 캠페인으로 보지 않는다.</h3>
+        <p class="lead">Creator content → search lift → marketplace conversion → review → organic visibility의 루프를 만든다.</p>
+      </div>
+
+      <div class="footer"><span>04 · CHANNEL PLAYBOOK</span><span>Shopee + Lazada + demand generation</span></div>
+    </section>
+
+    <section class="page">
+      <div class="section-head">
+        <div>
+          <div class="kicker">04 · 90-DAY EXECUTION</div>
+          <h2>작게 검증하고, 승자를 키우고, SEA용 플레이북으로 남긴다</h2>
+        </div>
+        <div class="num">04</div>
+      </div>
+
+      <div class="timeline">
+        <div class="phase">
+          <b>0–30 DAYS</b>
+          <p><b>Baseline & Build</b><br>채널별 매출·광고·검색·리뷰 기준선 정리. Hero SKU 2–3개 선정. 상품 페이지·키워드·콘텐츠 포맷 정비. Micro creator 10–20명 시드 운영.</p>
+        </div>
+        <div class="phase">
+          <b>31–60 DAYS</b>
+          <p><b>Test & Learn</b><br>Creator 포맷·검색 키워드·플랫폼 광고를 조합해 테스트. Mega Day에 승자 SKU와 콘텐츠를 집중. Shopee와 Lazada의 전환 차이를 비교.</p>
+        </div>
+        <div class="phase">
+          <b>61–90 DAYS</b>
+          <p><b>Scale & Transfer</b><br>반복 구매/자연검색/리뷰 신호가 좋은 SKU를 확장. 실패 소재는 중단. 싱가포르에서 확인된 원리를 MY·PH·TH용 현지화 가설로 문서화.</p>
+        </div>
+      </div>
+
+      <div class="rule"></div>
+
+      <h3>KPI는 ‘바이럴됐는가’가 아니라 ‘성장 루프가 만들어졌는가’</h3>
+      <div class="kpi" style="margin-top:8px">
+        <div><b>Discovery</b><span class="small">콘텐츠 도달<br>브랜드 검색량<br>상품 상세 유입</span></div>
+        <div><b>Conversion</b><span class="small">CTR / CVR<br>주문수 / GMV<br>ROAS</span></div>
+        <div><b>Asset</b><span class="small">리뷰 수·평점<br>자연매출 비중<br>Hero SKU 집중도</span></div>
+        <div><b>Scale</b><span class="small">재구매 신호<br>채널별 학습<br>타국가 적용 가능성</span></div>
+      </div>
+
+      <div class="grid2" style="margin-top:12px">
+        <div class="card violet">
+          <div class="kicker">EXPECTED EFFECT 01</div>
+          <h3>할인만으로 만드는 매출에서 벗어나기</h3>
+          <p>사용 장면과 검색 수요를 쌓아, Mega Day가 끝난 뒤에도 자연검색·리뷰·콘텐츠가 남는 구조를 목표로 한다.</p>
+        </div>
+        <div class="card blue">
+          <div class="kicker">EXPECTED EFFECT 02</div>
+          <h3>싱가포르 성과를 동남아 전체의 학습 자산으로</h3>
+          <p>국가별 성과를 그대로 복제하지 않고, 반응한 요소를 분해해 말레이시아·필리핀·태국 등으로 현지화한다.</p>
+        </div>
+      </div>
+
+      <div class="big-callout" style="margin-top:12px">
+        <div>
+          <div class="kicker">ONE-LINE PROPOSAL</div>
+          <strong>바이럴을 기다리지 않고,<br>소비자가 보고 검색하고 선택하는 구조를 만든다.</strong>
+        </div>
+        <span class="pill">SG → SEA</span>
+      </div>
+
+      <div class="sources" style="margin-top:13px">
+        <b>Public references used in this proposal</b>
+        <ol>
+          <li>Momentum Works, Ecommerce in Southeast Asia 2026: https://thelowdown.momentum.asia/</li>
+          <li>Shopee Singapore WAKEMAKE search: https://shopee.sg/list/wakemake</li>
+          <li>Lazada Singapore WAKEMAKE search/listings: https://www.lazada.sg/</li>
+          <li>CJ Olive Young WAKEMAKE brand page: https://corp.oliveyoung.com/</li>
+        </ol>
+        <p style="margin-top:6px">※ 시장 수치와 채널 노출은 작성 시점 공개자료 기준이며, 제출 직전 재확인 권장.</p>
+      </div>
+
+      <div class="footer"><span>05 · EXECUTION & EXPECTED EFFECT</span><span>WAKEMAKE Singapore → SEA</span></div>
+    </section>
+  </main>
+</body>
+</html>
