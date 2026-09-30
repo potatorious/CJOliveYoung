@@ -106,10 +106,29 @@
     }
     .big-callout strong{font-size:17px; line-height:1.22}
     .pill{background:#111;color:#fff;border-radius:999px;padding:5px 9px;font-size:9px;font-weight:800;white-space:nowrap}
+    .cover-grid{display:grid;grid-template-columns:1.65fr .85fr;gap:16px;align-items:start}
+    .cover-side{display:grid;gap:9px}
+    .cover-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:13px}
+    .cover-route{margin-top:14px}
+    .cover-thesis{margin-top:14px;display:grid;grid-template-columns:1.35fr .65fr;gap:10px}
+    .reason-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:12px;align-items:stretch}
+    .reason-left,.reason-right{display:grid;gap:9px}
+    .reason-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .reason-cards{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+    .reason-flow{margin-top:10px}
+    .execution-page{display:flex;flex-direction:column}
+    .execution-page .channel-grid{flex:1;align-items:stretch}
+    .execution-page .channel{display:flex;flex-direction:column}
+    .execution-page .bullets{margin-top:4px}
+    .execution-bottom{display:grid;grid-template-columns:1.15fr .85fr;gap:10px;margin-top:10px}
+    .roadmap-page{display:flex;flex-direction:column}
+    .roadmap-effects{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:9px}
+    .roadmap-final{margin-top:9px}
+    .fill-card{height:100%}
     @media(max-width:900px){
       .doc{padding:0}
       .page{width:100%; height:auto; min-height:100vh; margin:0; padding:28px 22px; box-shadow:none}
-      .grid2,.grid3,.hero-bottom,.timeline,.flow{grid-template-columns:1fr}
+      .grid2,.grid3,.hero-bottom,.timeline,.flow,.cover-grid,.cover-summary,.cover-thesis,.reason-grid,.reason-metrics,.reason-cards,.channel-grid,.execution-bottom,.roadmap-effects{grid-template-columns:1fr}
       .hero-route{grid-template-columns:1fr}.arrow{transform:rotate(90deg);text-align:center}
       .footer{position:static;margin-top:24px}
     }
@@ -130,37 +149,30 @@
   </div>
 
   <main class="doc">
+    <!-- 01. 선택 브랜드 및 국가·채널 -->
     <section class="page">
-      <div class="hero">
+      <div class="section-head">
         <div>
           <div class="kicker">① 선택 브랜드 및 국가·채널</div>
+          <h2>WAKEMAKE × Singapore × Shopee + Lazada</h2>
+        </div>
+        <div class="num">01</div>
+      </div>
+
+      <div class="cover-grid">
+        <div>
           <div class="hero-title">
-            <div class="super">WAKEMAKE × SINGAPORE × SHOPEE + LAZADA</div>
+            <div class="super">SINGAPORE AS A BRIDGE MARKET</div>
             <h1>싱가포르를 <span>도착점이 아닌<br>동남아 성장의 다리</span>로</h1>
             <p class="hero-sub lead">
-              판매처는 이미 존재합니다. 다음 과제는 <b>플랫폼 내부광고로 구매 신호를 만들고</b>,
-              그 성과를 <b>자연검색·재구매·브랜드 검색</b>으로 축적해 다른 채널의 마케팅 효율까지 끌어올리는 구조로 전환하는 것입니다.
+              판매처는 이미 존재합니다. 플랫폼 내부광고로 구매 신호를 만들고,
+              그 성과를 <b>자연검색·재구매·브랜드 검색</b>으로 축적해
+              다른 채널의 마케팅 효율까지 끌어올리는 구조를 제안합니다.
             </p>
-          </div>
-          <div class="hero-route">
-            <div class="route-node">PLATFORM ADS<br><span class="small">검색 · 상품 · 프로모션 광고</span></div>
-            <div class="arrow">→</div>
-            <div class="route-node">ORGANIC VISIBILITY<br><span class="small">판매 신호 · 리뷰 · 자연검색</span></div>
-            <div class="arrow">→</div>
-            <div class="route-node">REPEAT & SCALE<br><span class="small">재구매 · CRM · 타채널 확장</span></div>
-          </div>
-          <div class="grid3" style="margin-top:12px">
-            <div class="card soft"><b>① 선택</b><p class="small">WAKEMAKE · Singapore<br>Shopee + Lazada</p></div>
-            <div class="card soft"><b>② 선정 이유</b><p class="small">SEA 브리지 마켓<br>양대 플랫폼 검증</p></div>
-            <div class="card soft"><b>③ 실행·효과</b><p class="small">내부광고 → Organic<br>재구매 → 채널 확장</p></div>
           </div>
         </div>
 
-        <div class="hero-bottom">
-          <div class="card accent">
-            <div class="kicker">CORE THESIS</div>
-            <div class="quote">플랫폼 매출만 만드는 것이 아니라<br>브랜드 전체의 수요를 키우는 구조를 만드는 것입니다.</div>
-          </div>
+        <div class="cover-side">
           <div class="card">
             <div class="kicker">SELECTED</div>
             <p><b>Brand</b> WAKEMAKE</p>
@@ -168,150 +180,143 @@
             <p><b>Core channels</b> Shopee + Lazada</p>
             <p><b>Growth engine</b> Platform Ads → Organic → Repeat</p>
           </div>
+          <div class="card soft">
+            <div class="kicker">ASSIGNMENT MAP</div>
+            <p><b>① 선택</b> WAKEMAKE · Singapore · Shopee/Lazada</p>
+            <p><b>② 이유</b> SEA 브리지 마켓 · 기존 진입 기반 · 양대 플랫폼 검증</p>
+            <p><b>③ 실행</b> 내부광고 → Organic → 재구매 → 채널 확장</p>
+          </div>
         </div>
       </div>
-      <div class="footer"><span>01 · EXECUTIVE SUMMARY</span><span>최동빈</span></div>
+
+      <div class="hero-route cover-route">
+        <div class="route-node">PLATFORM ADS<br><span class="small">검색 · 상품 · 프로모션 광고</span></div>
+        <div class="arrow">→</div>
+        <div class="route-node">ORGANIC VISIBILITY<br><span class="small">판매 신호 · 리뷰 · 자연검색</span></div>
+        <div class="arrow">→</div>
+        <div class="route-node">REPEAT & SCALE<br><span class="small">재구매 · CRM · 타채널 확장</span></div>
+      </div>
+
+      <div class="cover-summary">
+        <div class="card soft"><b>① 선택</b><p class="small">이미 진입한 WAKEMAKE의 Singapore 이커머스 접점을 성장 기반으로 봅니다.</p></div>
+        <div class="card soft"><b>② 선정 이유</b><p class="small">Shopee와 Lazada를 동시에 검증하고 SEA 확장의 브리지 마켓으로 활용합니다.</p></div>
+        <div class="card soft"><b>③ 목표</b><p class="small">플랫폼 매출을 브랜드 검색·재구매·타채널 성과로 연결합니다.</p></div>
+      </div>
+
+      <div class="cover-thesis">
+        <div class="card accent">
+          <div class="kicker">CORE THESIS</div>
+          <div class="quote">플랫폼 매출만 만드는 것이 아니라<br>브랜드 전체의 수요를 키우는 구조를 만드는 것입니다.</div>
+        </div>
+        <div class="card">
+          <div class="kicker">GROWTH LOGIC</div>
+          <p class="lead"><b>Paid → Organic → Retention → Brand Halo → SEA</b></p>
+          <p class="small" style="margin-top:5px">첫 구매에서 끝나지 않고 다음 구매와 다음 채널까지 이어지도록 설계합니다.</p>
+        </div>
+      </div>
+
+      <div class="footer"><span>01 · ① 선택 브랜드 및 국가·채널</span><span>최동빈</span></div>
     </section>
 
+    <!-- 02. 선정 이유 + Current Gap -->
     <section class="page">
       <div class="section-head">
         <div>
           <div class="kicker">② 선정 이유</div>
-          <h2>왜 Singapore × Shopee·Lazada인가</h2>
-        </div>
-        <div class="num">01</div>
-      </div>
-
-      <div class="grid3">
-        <div class="card accent">
-          <div class="metric">US$5.9B</div>
-          <div class="metric-label">Singapore platform ecommerce GMV, 2025</div>
-        </div>
-        <div class="card">
-          <div class="metric">52%</div>
-          <div class="metric-label">Shopee share of Singapore platform GMV</div>
-        </div>
-        <div class="card">
-          <div class="metric">36%</div>
-          <div class="metric-label">Lazada share of Singapore platform GMV</div>
-        </div>
-      </div>
-
-      <div class="card soft" style="margin-top:10px">
-        <h3>Shopee + Lazada = 88%</h3>
-        <div class="bar"><span class="shopee"></span><span class="lazada"></span><span class="other"></span></div>
-        <div class="legend">
-          <span><i style="background:#111"></i>Shopee 52%</span>
-          <span><i style="background:#777"></i>Lazada 36%</span>
-          <span><i style="background:#d7d7d7"></i>Others 12%</span>
-        </div>
-        <p class="small" style="margin-top:8px">
-          2025년 싱가포르 플랫폼 이커머스 GMV 기준입니다. 두 채널을 함께 운영하면 시장의 대부분을 하나의 테스트베드에서 관찰할 수 있습니다.
-        </p>
-      </div>
-
-      <div class="rule"></div>
-
-      <div class="grid2">
-        <div>
-          <h3>싱가포르의 역할: 매출 규모보다 ‘검증과 확장’</h3>
-          <p>
-            싱가포르를 동남아 최대 시장으로 보는 전략은 아닙니다. 영어 기반의 콘텐츠를 만들고,
-            Shopee와 Lazada 양쪽에서 상품·검색·광고·프로모션 반응을 비교한 뒤,
-            검증된 운영 원리를 말레이시아·필리핀·태국 등으로 <b>현지화해 전개하는 브리지 마켓</b>으로 보고자 합니다.
-          </p>
-          <div class="note" style="margin-top:10px">
-            <b>원칙</b>
-            <p class="small">싱가포르에서 성공한 소재를 그대로 복사하지 않습니다. “무엇이 반응했는지”를 데이터로 분리한 뒤 국가별 가격, 문화, 플랫폼 구조에 맞춰 재설계합니다.</p>
-          </div>
-        </div>
-        <div class="card blue">
-          <div class="kicker">REGIONAL CONTEXT</div>
-          <p class="lead"><b>SEA 플랫폼 이커머스는 2025년 US$157.6B</b> 규모로 성장했으며, Shopee·Lazada·TikTok Shop 3개 플랫폼이 98.8%를 차지했습니다.</p>
-          <p class="small" style="margin-top:8px">
-            동시에 content commerce가 플랫폼 GMV의 32%를 차지했습니다. 콘텐츠는 “브랜딩 보조수단”을 넘어 수요를 만드는 인프라로 작동하고 있습니다.
-          </p>
-        </div>
-      </div>
-
-      <div class="sources" style="margin-top:14px">
-        <b>Sources</b>
-        <ol>
-          <li>Momentum Works, <i>Ecommerce in Southeast Asia 2026</i> — 2025 Singapore GMV and platform shares.</li>
-          <li>Momentum Works — SEA platform GMV US$157.6B; top 3 platforms 98.8%; content commerce 32%.</li>
-        </ol>
-      </div>
-      <div class="footer"><span>02 · ② 선정 이유</span><span>Singapore as a bridge market</span></div>
-    </section>
-
-    <section class="page">
-      <div class="section-head">
-        <div>
-          <div class="kicker">② 선정 이유 · CURRENT GAP</div>
-          <h2>판매 접점은 있습니다. 이제 ‘광고 이후’가 남아야 합니다</h2>
+          <h2>왜 WAKEMAKE × Singapore × Shopee·Lazada인가</h2>
         </div>
         <div class="num">02</div>
       </div>
 
-      <div class="grid2">
-        <div class="card">
-          <div class="kicker">COMMERCE PRESENCE</div>
-          <h3>Shopee: 공식명 검색 노출 + 제3자 판매 혼재</h3>
-          <p>
-            2026년 9월 Shopee Singapore 검색에서 <b>WAKEMAKE_SG</b>가 12개 상품으로 노출되며,
-            Soft Blurring Eye Palette·Any-Proof Eyeliner 등 핵심 색조 상품이 확인됩니다.
-            동시에 다수의 제3자 셀러도 검색 결과를 차지하고 있습니다.
-          </p>
+      <div class="reason-grid">
+        <div class="reason-left">
+          <div class="reason-metrics">
+            <div class="card accent">
+              <div class="metric">US$5.9B</div>
+              <div class="metric-label">Singapore platform ecommerce GMV, 2025</div>
+            </div>
+            <div class="card">
+              <div class="metric">52%</div>
+              <div class="metric-label">Shopee share of Singapore platform GMV</div>
+            </div>
+            <div class="card">
+              <div class="metric">36%</div>
+              <div class="metric-label">Lazada share of Singapore platform GMV</div>
+            </div>
+          </div>
+
+          <div class="card soft">
+            <h3>Shopee + Lazada = 88%</h3>
+            <div class="bar"><span class="shopee"></span><span class="lazada"></span><span class="other"></span></div>
+            <div class="legend">
+              <span><i style="background:#111"></i>Shopee 52%</span>
+              <span><i style="background:#777"></i>Lazada 36%</span>
+              <span><i style="background:#d7d7d7"></i>Others 12%</span>
+            </div>
+            <p class="small" style="margin-top:6px">2025년 싱가포르 플랫폼 이커머스 GMV 기준입니다. 두 채널을 함께 운영하면 주요 시장 반응을 하나의 테스트베드에서 비교할 수 있습니다.</p>
+          </div>
+
+          <div class="card blue">
+            <div class="kicker">WHY SINGAPORE</div>
+            <h3>매출 규모보다 ‘검증과 확장’의 가치가 큽니다</h3>
+            <p>
+              싱가포르를 동남아 최대 시장으로 보는 전략은 아닙니다. Shopee와 Lazada 양쪽에서
+              상품·검색·광고·프로모션 반응을 비교하고, 검증된 운영 원리를 말레이시아·필리핀·태국 등으로
+              <b>현지화해 전개하는 브리지 마켓</b>으로 보고자 합니다.
+            </p>
+          </div>
         </div>
-        <div class="card">
-          <div class="kicker">LAZADA VISIBILITY</div>
-          <h3>Lazada: 상품 수요는 있으나 판매 주체가 분산</h3>
-          <p>
-            Lazada Singapore 검색에서도 WAKEMAKE 아이팔레트·파운데이션·브러시 등이 확인되지만,
-            Beauty Concept Store·Gmarket Korea 등 여러 판매자에 노출이 분산되어 있습니다.
-          </p>
+
+        <div class="reason-right">
+          <div class="card">
+            <div class="kicker">WHY WAKEMAKE</div>
+            <h3>이미 진입한 브랜드이기 때문에 ‘신규 진출’보다 ‘성장 가속’에 집중할 수 있습니다</h3>
+            <p>
+              Singapore 이커머스에서 WAKEMAKE 상품 접점이 이미 확인됩니다.
+              공개자료만으로 실제 판매규모를 단정하지는 않되, 대표 SKU와 기존 판매 기반이 존재하는 만큼
+              Hero SKU 중심의 광고·검색·리뷰 축적 전략을 실행하기 좋은 상황으로 봅니다.
+            </p>
+          </div>
+
+          <div class="reason-cards">
+            <div class="card">
+              <div class="kicker">SHOPEE</div>
+              <h3>기존 상품 노출 + 제3자 판매 혼재</h3>
+              <p class="small">공식명 검색과 핵심 색조 상품이 확인되며, 브랜드가 직접 통제할 수 있는 검색·광고·리뷰 자산을 더 키울 여지가 있습니다.</p>
+            </div>
+            <div class="card">
+              <div class="kicker">LAZADA</div>
+              <h3>상품 수요는 있으나 판매 주체가 분산</h3>
+              <p class="small">플랫폼별 광고와 상품 정보 최적화를 통해 브랜드가 통제하는 구매 경험을 강화할 수 있습니다.</p>
+            </div>
+          </div>
+
+          <div class="card pink">
+            <div class="kicker">OWNED SOCIAL OBSERVATION</div>
+            <h3>SNS는 ‘예쁜 피드’보다 다시 찾아오고 다시 사게 만드는 접점으로 활용합니다</h3>
+            <p class="small">지원자 직접 확인 기준, Singapore Instagram의 최근 가시 게시물 활동에는 공백이 확인됩니다. 이는 매출 부진의 근거가 아니라 재구매·브랜드 검색을 보강할 접점의 여지로 해석합니다.</p>
+          </div>
         </div>
       </div>
 
-      <div class="big-callout" style="margin-top:11px">
-        <div>
-          <div class="kicker">OWNED SOCIAL OBSERVATION</div>
-          <strong>SNS의 역할은 ‘예쁜 피드’보다<br>다시 찾아오고 다시 사게 만드는 접점</strong>
-          <p class="small" style="margin-top:7px">
-            지원자 직접 확인 기준(2026-09-30), Singapore Instagram의 최신 가시 게시물이 2026년 7월에 머물러 있음.
-            이는 매출 부진의 증거가 아니라, 구매 이후 다시 브랜드로 돌아오는 접점을 강화할 여지가 있다는 운영 신호로 활용합니다.
-          </p>
-        </div>
-        <span class="pill">OBSERVATION, NOT CAUSATION</span>
+      <div class="flow reason-flow">
+        <div class="step"><strong>01 광고</strong>내부광고로 검색·상품 수요를 탐색합니다.</div>
+        <div class="step"><strong>02 전환</strong>구매 키워드·Hero SKU를 검증합니다.</div>
+        <div class="step"><strong>03 자연노출</strong>판매·리뷰 신호를 Organic으로 축적합니다.</div>
+        <div class="step"><strong>04 재구매</strong>CRM·SNS로 다시 돌아올 이유를 만듭니다.</div>
+        <div class="step"><strong>05 확장</strong>타 플랫폼·오프라인·SEA로 넓힙니다.</div>
       </div>
 
-      <div class="rule"></div>
-
-      <h3>문제 정의</h3>
-      <div class="flow" style="margin-top:7px">
-        <div class="step"><strong>01 광고</strong>플랫폼 내부광고로 검색·상품 수요를 빠르게 탐색합니다.</div>
-        <div class="step"><strong>02 전환</strong>구매 키워드·Hero SKU·프로모션 조합을 검증합니다.</div>
-        <div class="step"><strong>03 자연노출</strong>판매·리뷰 신호를 쌓아 유료광고 밖의 노출을 확대합니다.</div>
-        <div class="step"><strong>04 재구매</strong>CRM·SNS·쿠폰으로 고객이 다시 돌아오는 루프를 구축합니다.</div>
-        <div class="step"><strong>05 확장</strong>오프라인·자사몰·타 플랫폼·SEA로 채널을 확장합니다.</div>
+      <div class="sources" style="margin-top:7px">
+        <b>Reference</b>
+        <span> Momentum Works, <i>Ecommerce in Southeast Asia 2026</i> · Shopee Singapore · Lazada Singapore · CJ Olive Young WAKEMAKE brand information</span>
       </div>
 
-      <div class="card pink" style="margin-top:12px">
-        <div class="quote">첫 구매 자체가 목표가 아니라<br>광고 → 자연노출 → 재구매 → 채널확장의 루프를 만드는 것이 목표입니다.</div>
-      </div>
-
-      <div class="sources" style="margin-top:13px">
-        <b>Source notes</b>
-        <ol>
-          <li>Shopee Singapore, WAKEMAKE search result, crawled Sep 2026.</li>
-          <li>Lazada Singapore, WAKEMAKE search/listing pages, crawled Sep 2026.</li>
-          <li>Instagram recency is an applicant observation and should be rechecked immediately before submission.</li>
-        </ol>
-      </div>
-      <div class="footer"><span>03 · ② 선정 이유</span><span>Why this market-channel combination</span></div>
+      <div class="footer"><span>02 · ② 선정 이유</span><span>Brand potential × bridge market × dual platform</span></div>
     </section>
 
-    <section class="page">
+    <!-- 03. 실행 아이디어 -->
+    <section class="page execution-page">
       <div class="section-head">
         <div>
           <div class="kicker">③ 구체적인 실행 아이디어</div>
@@ -321,7 +326,7 @@
       </div>
 
       <div class="channel-grid">
-        <div class="channel">
+        <div class="channel fill-card">
           <div class="name">Shopee</div>
           <h3>내부광고를 Organic Rank를 만드는 학습 엔진으로 활용합니다</h3>
           <ul class="bullets">
@@ -332,7 +337,7 @@
           </ul>
         </div>
 
-        <div class="channel">
+        <div class="channel fill-card">
           <div class="name">Lazada</div>
           <h3>동일 원리로 검증하되 플랫폼별 Organic 구조를 별도로 학습합니다</h3>
           <ul class="bullets">
@@ -343,7 +348,7 @@
           </ul>
         </div>
 
-        <div class="channel">
+        <div class="channel fill-card">
           <div class="name">SNS / External</div>
           <h3>외부유입은 내부광고를 대체하지 않고 검색과 재구매를 증폭합니다</h3>
           <ul class="bullets">
@@ -355,15 +360,30 @@
         </div>
       </div>
 
-      <div class="card accent" style="margin-top:12px">
+      <div class="card accent" style="margin-top:10px">
+        <div class="kicker">GROWTH LOOP</div>
         <h3>핵심은 내부광고가 중심이며, SNS와 외부유입은 가속장치라는 점입니다.</h3>
-        <p class="lead">Platform Ads → Conversion Signal → Organic Visibility → Repeat Purchase → Channel Expansion의 루프를 만듭니다.</p>
+        <p class="lead">Platform Ads → Conversion Signal → Organic Visibility → Repeat Purchase → Channel Expansion</p>
       </div>
 
-      <div class="footer"><span>04 · ③ 실행 아이디어</span><span>Shopee + Lazada growth engine</span></div>
+      <div class="execution-bottom">
+        <div class="card soft">
+          <div class="kicker">BRAND HALO</div>
+          <h3>플랫폼 매출은 끝이 아니라 브랜드 인지도를 키우는 시작점입니다</h3>
+          <p>광고·검색·리뷰·재구매를 통해 브랜드 수요를 축적하면 고객은 다른 접점에서도 WAKEMAKE를 다시 찾게 됩니다. 이를 자사몰, 오프라인, 타 플랫폼의 마케팅 효율로 연결합니다.</p>
+        </div>
+        <div class="card">
+          <div class="kicker">ROLE OF MARKETPLACE</div>
+          <h3>플랫폼을 ‘판매 채널’이 아니라 ‘브랜드 수요를 만드는 전초기지’로 활용합니다</h3>
+          <p>첫 구매 데이터를 가장 빠르게 확보하고, 검증된 SKU·키워드·고객 신호를 다른 채널과 국가의 성장 자산으로 전환합니다.</p>
+        </div>
+      </div>
+
+      <div class="footer"><span>03 · ③ 실행 아이디어</span><span>Platform Ads → Organic → Repeat → Brand Halo</span></div>
     </section>
 
-    <section class="page">
+    <!-- 04. 로드맵 및 기대효과 -->
+    <section class="page roadmap-page">
       <div class="section-head">
         <div>
           <div class="kicker">③ 실행 로드맵 및 기대효과</div>
@@ -379,25 +399,25 @@
         </div>
         <div class="phase">
           <b>3 MONTHS</b>
-          <p><b>Test & Learn</b><br>내부광고에서 구매 키워드와 Hero SKU를 검증하고 Mega Day에 성과 자원을 집중합니다. Meta 협력광고와 Micro Creator로 검색 수요를 보강하며 Shopee와 Lazada의 Organic 반응 차이를 비교합니다.</p>
+          <p><b>Test & Learn</b><br>내부광고에서 구매 키워드와 Hero SKU를 검증하고 Mega Day에 성과 자원을 집중합니다. Meta 협력광고와 Micro Creator로 검색 수요를 보강하며 두 플랫폼의 Organic 반응을 비교합니다.</p>
         </div>
         <div class="phase">
           <b>1 YEAR</b>
-          <p><b>Scale & Transfer</b><br>자연매출, 재구매, 리뷰 신호가 좋은 SKU와 카테고리를 확장하고 CRM을 연결합니다. 축적된 데이터를 바탕으로 오프라인, 자사몰, 타 플랫폼과 말레이시아, 필리핀, 태국 등으로 확장 가능한 운영 플레이북을 완성합니다.</p>
+          <p><b>Scale & Transfer</b><br>자연매출, 재구매, 리뷰 신호가 좋은 SKU와 카테고리를 확장하고 CRM을 연결합니다. 오프라인, 자사몰, 타 플랫폼과 MY·PH·TH 등으로 확장 가능한 운영 플레이북을 완성합니다.</p>
         </div>
       </div>
 
       <div class="rule"></div>
 
       <h3>KPI는 ‘광고가 잘됐는가’보다 ‘광고 없이도 성장하는 비중이 늘었는가’를 봅니다</h3>
-      <div class="kpi" style="margin-top:8px">
+      <div class="kpi" style="margin-top:7px">
         <div><b>Paid Engine</b><span class="small">CTR / CVR<br>GMV / ROAS<br>구매 키워드</span></div>
         <div><b>Organic</b><span class="small">자연검색 노출<br>자연매출 비중<br>브랜드 검색량</span></div>
         <div><b>Retention</b><span class="small">재구매율<br>CRM 반응<br>연관 SKU 전환</span></div>
         <div><b>Expansion</b><span class="small">오프라인 가능성<br>D2C·타 플랫폼<br>SEA 적용 가능성</span></div>
       </div>
 
-      <div class="grid2" style="margin-top:12px">
+      <div class="roadmap-effects">
         <div class="card violet">
           <div class="kicker">EXPECTED EFFECT 01</div>
           <h3>광고비가 멈춰도 남는 매출을 만듭니다</h3>
@@ -406,35 +426,26 @@
         <div class="card blue">
           <div class="kicker">EXPECTED EFFECT 02</div>
           <h3>플랫폼 성과를 브랜드 전체의 마케팅 자산으로 확장합니다</h3>
-          <p>플랫폼 내부광고와 구매 경험을 통해 브랜드 검색과 인지도를 높이고, 축적된 수요가 오프라인, 자사몰, 타 플랫폼의 마케팅 효율까지 높이도록 연결합니다. 이후 싱가포르에서 검증한 운영 원리를 SEA 확장 자산으로 활용합니다.</p>
+          <p>브랜드 검색과 인지도를 높이고, 축적된 수요가 오프라인·자사몰·타 플랫폼의 마케팅 효율까지 높이도록 연결합니다.</p>
         </div>
       </div>
 
-      <div class="card soft" style="margin-top:12px">
-        <div class="kicker">BRAND HALO</div>
-        <h3>플랫폼 매출은 끝이 아니라 브랜드 인지도를 키우는 시작점입니다</h3>
-        <p>
-          Shopee와 Lazada 안에서 광고, 검색, 리뷰, 재구매를 통해 브랜드 수요를 축적하면 고객은 이후 다른 접점에서도 WAKEMAKE를 다시 찾게 됩니다.
-          이를 통해 자사몰, 오프라인, 다른 이커머스 플랫폼의 신규 고객 획득 비용과 마케팅 효율까지 개선하는 선순환을 만들고자 합니다.
-        </p>
-      </div>
-
-      <div class="big-callout" style="margin-top:12px">
+      <div class="big-callout roadmap-final">
         <div>
           <div class="kicker">EXPECTED EFFECT</div>
           <strong>플랫폼 매출 → 자연검색 → 재구매 → 브랜드 검색 → 타채널 효율 → SEA 확장</strong>
-          <p class="small" style="margin-top:7px">플랫폼 성과가 플랫폼 안에서 끝나지 않고 브랜드 전체의 성장 자산으로 이어지도록 합니다.</p>
+          <p class="small" style="margin-top:5px">플랫폼 성과가 플랫폼 안에서 끝나지 않고 브랜드 전체의 성장 자산으로 이어지도록 합니다.</p>
         </div>
         <span class="pill">SG → SEA</span>
       </div>
 
-      <div class="sources" style="margin-top:8px">
+      <div class="sources" style="margin-top:6px">
         <b>Reference</b>
         <span> Momentum Works, <i>Ecommerce in Southeast Asia 2026</i> · Shopee Singapore · Lazada Singapore · CJ Olive Young WAKEMAKE brand information</span>
-        <p style="margin-top:4px">※ 시장 수치와 채널 노출은 작성 시점 공개자료 기준이며, 제출 직전 재확인합니다.</p>
+        <p style="margin-top:3px">※ 시장 수치와 채널 노출은 작성 시점 공개자료 기준이며, 제출 직전 재확인합니다.</p>
       </div>
 
-      <div class="footer"><span>05 · ③ 기대효과</span><span>WAKEMAKE Singapore → SEA</span></div>
+      <div class="footer"><span>04 · ③ 실행 로드맵 및 기대효과</span><span>WAKEMAKE Singapore → SEA</span></div>
     </section>
   </main>
 </body>
